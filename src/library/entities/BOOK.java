@@ -1,33 +1,37 @@
-class Book {
+package library.entities;
+
+public class BOOK {
     private int bookId;
     private String title;
     private String author;
     private boolean isIssued;
 
-    Book(int bookId, String title, String author) {
+   public BOOK(int bookId, String title, String author) {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
         this.isIssued = false;
     }
 
-    int getBookId() {
+   public int getBookId() {
         return bookId;
     }
 
-    boolean isIssued() {
+
+   public boolean isIssued() {
         return isIssued;
     }
 
-    void issueBook() {
+   public void issueBook() {
         isIssued = true;
     }
 
-    void returnBook() {
+
+   public void returnBook() {
         isIssued = false;
     }
 
-    void displayBook() {
+    public void displayBook() {
         System.out.println(bookId + " | " + title + " | " + author +
                 " | " + (isIssued ? "Issued" : "Available"));
     }
