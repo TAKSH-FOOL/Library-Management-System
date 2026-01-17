@@ -1,16 +1,16 @@
 package library.app;
 
 import library.entities.BOOK;
-import library.entities.LOGIN;
-import library.entities.MEMBER;
-import library.entities.ADMIN;
+import library.entities.Login;
+import library.entities.Member;
+import library.entities.Admin;
 
 import java.util.Scanner;
 public class LibraryManagementSystem {
 
     static BOOK[] books = new BOOK[10000];
-    static MEMBER[] members = new MEMBER[1000];
-    static ADMIN[] admins = new ADMIN[10];
+    static Member[] members = new Member[1000];
+    static Admin[] admins = new Admin[10];
     static int bookCount = 0;
     static int memberCount = 0;
 
@@ -20,34 +20,40 @@ public class LibraryManagementSystem {
         for(;true;){
             System.out.println("Welcome to the Library Management System");
             System.out.println("select your role:");
-            System.out.println("1. ADMIN");
-            System.out.println("2. MEMBER");
-            System.out.println("3. EXIT");
+            System.out.println("1. Admin");
+            System.out.println("2. Member");
+            System.out.print("Enter your choice: ");
             int roleChoice = sc.nextInt();
             if(roleChoice == 1){
-                System.out.println("1. LOGIN");
+                System.out.println("1. Login");
                 System.out.println("2. REGISTER");
+                System.out.print("Enter your choice: ");
                 int adminChoice = sc.nextInt();
                 if(adminChoice == 1){
-                    LOGIN admin = new LOGIN();
+                    Login admin = new Login();
                     admin.adminLogin(admins);
+                    return;
                 }
                 else if(adminChoice == 2){
-                    LOGIN admin = new LOGIN();
+                    Login admin = new Login();
                     admin.adminRegister(admins);
+                    return;
                 }
             }
             else if(roleChoice == 2){
-                System.out.println("1. LOGIN");
+                System.out.println("1. Login");
                 System.out.println("2. REGISTER");
+                System.out.print("Enter your choice: ");
                 int memberChoice = sc.nextInt();
                 if(memberChoice == 1){
-                    LOGIN member = new LOGIN();
+                    Login member = new Login();
                     member.memberLogin(members);
+                    return;
                 }
                 else if(memberChoice == 2){
-                    LOGIN member = new LOGIN();
+                    Login member = new Login();
                     member.memberRegister(members);
+                    return;
                 }
             }
         }

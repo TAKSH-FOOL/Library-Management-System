@@ -1,12 +1,12 @@
 package library.entities;
 
-public abstract class USER {
+public abstract class User {
     protected int id;
     protected String name;
     protected String Role;
     protected String password;
 
-    protected USER(int id, String name, String Role, String password) {
+    protected User(int id, String name, String Role, String password) {
         this.id = id;
         this.name = name;
         this.Role = Role;

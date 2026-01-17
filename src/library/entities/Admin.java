@@ -1,19 +1,19 @@
 package library.entities;
-import java.util.Scanner;
 
-public class ADMIN extends USER {
+public class Admin extends User {
     private static int adminCount = 1;
 
     public static int getAdminCount() {
         return adminCount;
     }
 
-    public static void incrementAdminCount() {
+    private static void incrementAdminCount() {
         ++adminCount;
     }
 
-    public ADMIN(int id, String name, String role, String password) {
+    public Admin(int id, String name, String role, String password) {
         super(id, name, role, password);
+        incrementAdminCount();
     }
 
     public void displayInfo() {

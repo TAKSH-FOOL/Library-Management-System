@@ -1,7 +1,6 @@
 package library.entities;
-import java.util.Scanner;
 
-public class MEMBER extends USER {
+public class Member extends User {
     static int memebrCount = 1;
 
     public static int getMemebrCount() {
@@ -12,7 +11,7 @@ public class MEMBER extends USER {
         ++memebrCount;
     }
 
-    public MEMBER(int id, String name, String role, String password) {
+    public Member(int id, String name, String role, String password) {
         super(id, name, role, password);
     }
 
