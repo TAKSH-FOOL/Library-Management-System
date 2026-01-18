@@ -13,11 +13,15 @@ public abstract class User {
         this.password = password;
     }
 
-    public boolean authenticate(String name, int id, String password) {
-        return this.name.equals(name)
-                && this.id == id
-                && this.password.equals(password); // later → hashed
+    public int getId() {
+        return id;
     }
+
+    public boolean authenticate(String name, int id, String password) {
+        return this.name.equals(name) && this.id == id && this.password.equals(password); // later → hashed
+    }
+
+
 
     abstract void displayInfo();
 }

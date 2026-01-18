@@ -1,14 +1,14 @@
 package library.entities;
 
 public class Member extends User {
-    static int memebrCount = 1;
+    static int memberCount = 1;
 
-    public static int getMemebrCount() {
-        return memebrCount;
+    public static int getMemberCount() {
+        return memberCount;
     }
 
     public static void incrementMemberCount() {
-        ++memebrCount;
+        ++memberCount;
     }
 
     public Member(int id, String name, String role, String password) {

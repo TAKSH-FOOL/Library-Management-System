@@ -1,13 +1,15 @@
 package library.entities;
 
-public class BOOK {
+public class Book {
+    static int id = 0;
     private int bookId;
     private String title;
     private String author;
     private boolean isIssued;
 
-   public BOOK(int bookId, String title, String author) {
-        this.bookId = bookId;
+   public Book(String title, String author) {
+        ++id;
+        this.bookId = id;
         this.title = title;
         this.author = author;
         this.isIssued = false;
@@ -15,17 +17,15 @@ public class BOOK {
 
    public int getBookId() {
         return bookId;
-    }
+   }
 
+   public void issueBook() {
+       isIssued = true;
+   }
 
    public boolean isIssued() {
         return isIssued;
     }
-
-   public void issueBook() {
-        isIssued = true;
-    }
-
 
    public void returnBook() {
         isIssued = false;
