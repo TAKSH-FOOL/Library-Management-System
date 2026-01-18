@@ -19,12 +19,12 @@ public class BookService {
 
     public void viewBook(Book [] books){
         for(int i = 0; i < books.length; i++){
-            if(books[i].isIssued() == true){
+            if(books[i] != null && books[i].isIssued() == true){
                 books[i].displayBook();
             }
         }
         for(int i = 0; i < books.length; i++){
-            if(books[i].isIssued() == false){
+            if(books[i] != null && books[i].isIssued() == false){
                 books[i].displayBook();
             }
         }
@@ -33,9 +33,13 @@ public class BookService {
     public void removeBook(Book[] books){
         System.out.print("enter the book Id you want to remove : ");
         int bookId = sc.nextInt();
-        for(Book book : books){
-            book = null;
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] != null && books[i].getBookId() == bookId) {
+                books[i] = null;
+                break;
+            }
         }
+
     }
 
     public void issueBook(Book[] books){

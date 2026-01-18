@@ -42,31 +42,37 @@ public class LibraryManagementSystem {
                     System.out.println("invalid choice");
                 }
                 if (isAdmin != null){
-                    Menu.adminMenu();
-                    int functionChoice = sc.nextInt();
-                    if(functionChoice == 1){
-                        switch (functionChoice){
-                            case 1:{
-                                bookService.addBook(books);
-                                break;
-                            }
-                            case 2:{
-                                bookService.viewBook(books);
-                                break;
-                            }
-                            case 3:{
-                                memberService.viewMembers(members);
-                                break;
-                            }
-                            case 4:{
-                                memberService.removeMember(members);
-                                break;
-                            }
-                            default:{
-                                System.out.println("invalid choice");
+                    while (true){
+                        Menu.adminMenu();
+                        int functionChoice = sc.nextInt();
+                        if(functionChoice == 1){
+                            switch (functionChoice){
+                                case 1:{
+                                    bookService.addBook(books);
+                                    break;
+                                }
+                                case 2:{
+                                    bookService.viewBook(books);
+                                    break;
+                                }
+                                case 3:{
+                                    memberService.viewMembers(members);
+                                    break;
+                                }
+                                case 4:{
+                                    memberService.removeMember(members);
+                                    break;
+                                }
+                                case 5:{
+                                    System.exit(0);
+                                }
+                                default:{
+                                    System.out.println("invalid choice");
+                                }
                             }
                         }
                     }
+
                 }
             }
             else if(roleChoice == 2){
@@ -82,11 +88,18 @@ public class LibraryManagementSystem {
                     System.out.println("invalid choice");
                 }
                 if (isMember != null){
-                    Menu.memberMenu();
-                    int functionChoice = sc.nextInt();
-                    switch (functionChoice){
-                        case 1:{
-
+                    while (true){
+                        Menu.memberMenu();
+                        int functionChoice = sc.nextInt();
+                        switch (functionChoice){
+                            case 1:{
+                                bookService.issueBook(books);
+                                break;
+                            }
+                            case 2:{
+                                bookService.returnBook(books);
+                                break;
+                            }
                         }
                     }
                 }

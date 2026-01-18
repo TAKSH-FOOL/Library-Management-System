@@ -21,10 +21,12 @@ public class Menu {
         System.out.println("3. View Members");
         System.out.println("4. Remove Books");
         System.out.println("5. Remove Members");
+        System.out.println("6. Exit");
     }
 
     public static void memberMenu(){
         System.out.println("1. Issue Book");
         System.out.println("2. Return Book");
+        System.out.println("3. Exit");
     }
 }
